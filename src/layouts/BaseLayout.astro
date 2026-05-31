@@ -1,0 +1,69 @@
+---
+import "../styles/global.css";
+import "../styles/Header.css";
+const { title, activeTab } = Astro.props;
+const sns_list = [
+  {
+    id: "github",
+    link: "https://github.com/Uliboooo",
+    logo: "../../public/icons/github/GitHub_Invertocat_Black.svg",
+  },
+  {
+    id: "x",
+    link: "https://x.com/Uliboooo",
+    logo: "../../public/icons/x/logo.svg",
+  },
+];
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Lilan</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <a
+          href="/uliboooo"
+          class={`link--underline head-title ${activeTab === "uliboooo" ? "is-active" : ""}`}
+        >
+          Uliboooo
+        </a>
+        <span class="head-title"> | </span>
+        <a
+          href="/lilan"
+          class={`link--underline head-title ${activeTab === "lilan" ? "is-active" : ""}`}
+        >
+          Lilan
+        </a>
+      </div>
+      <div>
+        <ul class="sns_link">
+          {
+          sns_list.map(p => (
+          <li id={p.id}>
+            <a href={p.link} target="_blank" rel="noopener noreferrer"><img src={p.logo}></a>
+          </li>
+          ))
+          }
+
+        </ul>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <slot />
+    </main>
+
+    <footer>
+      <div>
+        2026
+      </div>
+    </footer>
+  </body>
+</html>

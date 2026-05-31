@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Annotation Mono";
+  src: url("/fonts/AnnotationMono-VF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --accent-color: #da70d6;
+  --base-fonts-sans: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Roboto", "Noto Sans JP", sans;
+  --base-fonts-mono: "Annotation Mono", "Fira Code", Consolas,
+    "Liberation Mono", Menlo, monospace;
+  --text: #111111;
+  --heading-color: #111111;
+  --base_bg: #FFFAFA;
+}
+
+body {
+  font-family: var(--base-fonts-sans);
+  width: 70%;
+  margin: auto;
+  background-color: #FFFAFA;
+}
+
+p {
+  font-family: "Noto Sans JP", var(--base-fonts-sans);
+}
+
+header {
+  border-bottom: 0.1rem solid var(--accent-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  font-family: var(--base-fonts-mono);
+}
+
+.head-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: var(--base-fonts-mono);
+  color: var(--text);
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.head-title.is-active {
+  color: #da70d6;
+  background-size: 100% 1.5px;
+  background-image: linear-gradient(#da70d6, #da70d6);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.page-main {
+  padding-top: 1.25rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: #24292f;
+}
+
+h2::before {
+  content: "##";
+  color: #6e7781;
+  margin-right: 0.5rem;
+}
+
+.link--underline,
+.link--underline:visited {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.3s ease, color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.link--underline:hover {
+  background-size: 100% 1.5px;
+  color: #da70d6;
+  background-image: linear-gradient(#da70d6, #da70d6);
+  opacity: 0.7;
+}
+
+.link--external::after {
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.2em;
+  background-color: currentColor;
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cline x1="7" y1="17" x2="17" y2="7"%3E%3C/line%3E%3Cpolyline points="7 7 17 7 17 17"%3E%3C/polyline%3E%3C/svg%3E');
+  mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cline x1="7" y1="17" x2="17" y2="7"%3E%3C/line%3E%3Cpolyline points="7 7 17 7 17 17"%3E%3C/polyline%3E%3C/svg%3E');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: transform 0.2s ease;
+}
+
+.link--external:hover::after {
+  transform: translate(1px, -1px);
+}
+
+/* uliboooo page styles */
+.info-section {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.info-link {
+  color: #0969da;
+}
+
+/* lilan page styles */
+.works-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work-tab-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e1e4e8;
+  padding-bottom: 0.5rem;
+}
+
+.work-tab-button {
+  border: 0;
+  background: transparent;
+  color: #57606a;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.work-tab-button:hover {
+  color: #24292f;
+  opacity: 0.7;
+}
+
+.work-tab-button.is-active {
+  color: #da70d6;
+  background-size: 100% 1.5px;
+  background-image: linear-gradient(#da70d6, #da70d6);
+}
+
+.work-panels {
+  padding-top: 0.5rem;
+}
+
+.work-tab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.works-link {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.works-desc {
+  margin: 0;
+  color: #57606a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  border-top: 0.1rem solid var(--accent-color);
+  margin-top: 2rem;
+}

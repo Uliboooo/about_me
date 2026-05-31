@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const l = [
+  {
+    name: "伊吹静香は20歳になった",
+    link: "https://note.com/uliboooo/n/n14721f4913ac",
+  },
+];
+---
+
+<BaseLayout title="Lilan" activeTab="lilan">
+  <div class="works-section">
+    <h2>Lilan (梨藍)</h2>
+    創作物などに向けた名義。Ulibooooの中の人ともいう。
+    <blockquote cite=""><p>好きな物:<br />文字, パスタ, かわいいもの, 軽さ, 雨, 睡眠, Vim, 紙袋</p></blockquote>
+    <blockquote cite=""><p>嫌いなもの:<br />右クリック, 細かいUI, 多機能, 複雑な料金プラン</p></blockquote>
+
+    <h2>Works</h2>
+    <ul>
+      {l.map(p => (
+      <li>
+        <a href={p.link} class="link--external link--underline">{p.name}</a>
+      </li>
+      ))
+      }
+    </ul>
+  </div>
+
+</BaseLayout>

@@ -1,0 +1,11 @@
+.sns_link {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 2rem;
+  }
+}
