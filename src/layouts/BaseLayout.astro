@@ -1,28 +1,21 @@
 ---
 import "../styles/global.css";
-import "../styles/Header.css";
 const { title, activeTab } = Astro.props;
-const sns_list = [
-  {
-    id: "github",
-    link: "https://github.com/Uliboooo",
-    logo: "../../public/icons/github/GitHub_Invertocat_Black.svg",
-  },
-  {
-    id: "x",
-    link: "https://x.com/Uliboooo",
-    logo: "../../public/icons/x/logo.svg",
-  },
-];
 ---
 
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/webp" href="/uliboooo.webp" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      rel="preload"
+      href="/fonts/MapleMono-Variable/MapleMono[wght].ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <title>{title} | Lilan</title>
   </head>
   <body>
@@ -41,18 +34,6 @@ const sns_list = [
         >
           Lilan
         </a>
-      </div>
-      <div>
-        <ul class="sns_link">
-          {
-          sns_list.map(p => (
-          <li id={p.id}>
-            <a href={p.link} target="_blank" rel="noopener noreferrer"><img src={p.logo}></a>
-          </li>
-          ))
-          }
-
-        </ul>
       </div>
     </header>
 

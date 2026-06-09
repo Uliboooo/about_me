@@ -1,32 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/uliboooo.css";
+const sns_list = [
+  {
+    id: "github",
+    link: "https://github.com/Uliboooo",
+    logo: "/icons/github/GitHub_Invertocat_Black.svg",
+  },
+  {
+    id: "x",
+    link: "https://x.com/Uliboooo",
+    logo: "/icons/x/logo_black.svg",
+  },
+];
 ---
 
 <BaseLayout title="Uliboooo" activeTab="uliboooo">
-  <div class="">
-    <h2>Uliboooo</h2>
-    <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIツールなどを開発しています。Vim派。</p>
-    <p>I am a university student who loves Software and Text. My name has four ‘o’. I develop CLI tools mainly using Rust. I’m a Vimmer.</p>
-    <div class="info-section">
-      <h3 class="section-title">Links</h3>
-      <ul class="info-list">
-        <li class="info-item">
-          <a
-            class="info-link link--underline link--external"
-            href="https://github.com/Uliboooo"
-          >
-            GitHub
-          </a>
-        </li>
-        <li class="info-item">
-          <a
-            class="info-link link--underline link--external"
-            href="https://x.com/Uliboooo"
-          >
-            X
-          </a>
-        </li>
-      </ul>
+  <div class="about_me">
+    <div class="main_content">
+      <img src="/uliboooo.webp" alt="Uliboooo profile image" class="profile-image" />
+      <h2>Uliboooo</h2>
+      <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIツールなどを開発しています。Vim派。</p>
+      <p>I am a university student who loves Software and Text. My name has four ‘o’. I develop CLI tools mainly using Rust. <span class="no-wrap">I’m a Vimmer.</span></p>
+      <nav>
+          {
+          sns_list.map(p => (
+            <a href={p.link} target="_blank" rel="noopener noreferrer">
+              <span class="icon" style={`--icon-url: url(${p.logo})`}></span>
+            </a>
+          ))
+          }
+
+      </nav>
     </div>
   </div>
 </BaseLayout>
