@@ -7,8 +7,8 @@ const l = [
     name: "伊吹静香は20歳になった",
     links: [
       {
-        type: "note",
-        link: "https://note.com/uliboooo/n/n14721f4913ac",
+        type: "カクヨム",
+        link: "https://kakuyomu.jp/works/2912051601683894129",
       },
       {
         type: "X",
@@ -41,7 +41,7 @@ const l = [
       </blockquote>
 
       <h2 id="works">Works</h2>
-      
+
       {
         l.map((work) => (
           <div class="work-item">
@@ -49,7 +49,7 @@ const l = [
             <div class="work-links">
               {work.links.map((p) => (
                 <a href={p.link} target="_blank" class="link--external" rel="noopener noreferrer">
-                  <span style="font-size: 1.05rem;">{p.type}</span>
+                  <span style="font-size: 1rem;">{p.type}</span>
                 </a>
               ))}
             </div>
