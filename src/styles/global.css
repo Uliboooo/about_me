@@ -73,6 +73,10 @@
   box-sizing: border-box;
 }
 
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
 body {
   font-family: var(--base-fonts-sans);
   width: 70%;
@@ -130,6 +134,43 @@ header {
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.blog-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  transition: all 0.3s ease;
+  height: 40px;
+  border-radius: 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.blog-link .icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: var(--text-muted);
+}
+
+.blog-link:hover {
+  background-color: rgba(201, 180, 255, 0.1);
+  box-shadow: var(--lavender-glow);
+  color: var(--neon-blue);
+}
+
+.blog-link:hover .icon {
+  background-color: var(--neon-blue);
+  filter: drop-shadow(0 0 5px rgba(201, 180, 255, 0.5));
 }
 
 .theme-toggle {
@@ -239,6 +280,28 @@ h2::after {
   mask-position: center;
   -webkit-mask-size: contain;
   mask-size: contain;
+}
+
+.external-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.3rem;
+  background-color: currentColor;
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cline x1="7" y1="17" x2="17" y2="7"%3E%3C/line%3E%3Cpolyline points="7 7 17 7 17 17"%3E%3C/polyline%3E%3C/svg%3E');
+  mask-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cline x1="7" y1="17" x2="17" y2="7"%3E%3C/line%3E%3Cpolyline points="7 7 17 7 17 17"%3E%3C/polyline%3E%3C/svg%3E');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: transform 0.3s ease;
+}
+
+.external-link:hover::after {
+  transform: translate(3px, -3px);
 }
 
 .icon {
