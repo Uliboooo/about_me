@@ -1,32 +1,192 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/uliboooo.css";
+const sns_list = [
+  {
+    id: "github",
+    link: "https://github.com/Uliboooo",
+    logo: "/icons/github/GitHub_Invertocat_Black.svg",
+  },
+  {
+    id: "x",
+    link: "https://x.com/Uliboooo",
+    logo: "/icons/x/logo_black.svg",
+  },
+  {
+    id: "blog",
+    link: "https://blog.uliboooo.dev/",
+    logo: "/icons/blog/logo_black.svg",
+  },
+];
 ---
 
 <BaseLayout title="Uliboooo" activeTab="uliboooo">
-  <div class="">
-    <h2>Uliboooo</h2>
-    <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIツールなどを開発しています。Vim派。</p>
-    <p>I am a university student who loves Software and Text. My name has four ‘o’. I develop CLI tools mainly using Rust. I’m a Vimmer.</p>
-    <div class="info-section">
-      <h3 class="section-title">Links</h3>
-      <ul class="info-list">
-        <li class="info-item">
-          <a
-            class="info-link link--underline link--external"
-            href="https://github.com/Uliboooo"
-          >
-            GitHub
+  <div class="about_me">
+    <div class="main_content">
+      <img
+        src="/uliboooo.webp"
+        alt="Uliboooo profile image"
+        class="profile-image"
+      />
+      <h2 id="uliboooo">Uliboooo</h2>
+      <p>
+        ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIツールなどを開発しています。Vim派。
+      </p>
+      <p>
+        I am a university student who loves Software and Text. My name has four
+        ‘o’. I develop CLI tools mainly using Rust. <span class="no-wrap"
+          >I’m a Vimmer.</span
+        >
+      </p>
+
+      <nav class="intro-sns">
+        {
+          sns_list.map((p) => (
+            <a href={p.link} target="_blank" class="link--external" rel="noopener noreferrer" title={p.id}>
+              <span class="icon" style={`--icon-url: url(${p.logo})`} />
+            </a>
+          ))
+        }
+      </nav>
+
+      <h2 id="links">Link Exchange</h2>
+      <p>
+        相互リンク募集中。私の即席バナーは以下。（200x40）<br />
+        <span class="email-link">
+          <a href="mailto:l1lan@proton.me?subject=%E7%9B%B8%E4%BA%92%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">l1lan@proton.me</a>
+        </span>
+        へご連絡ください。
+      </p>
+      <div class="banners">
+        <div class="banner-item">
+          <a href="https://github.com/Uliboooo/about_me/tree/main/public/banners/uli_banner_big.png" target="_blank" class="link--external">
+            <img src="/banners/uli_banner.png" alt="uliboooo-banner" class="banner-small" />
           </a>
-        </li>
-        <li class="info-item">
-          <a
-            class="info-link link--underline link--external"
-            href="https://x.com/Uliboooo"
-          >
-            X
+        </div>
+        <div class="banner-item">
+          <a href="https://keitagame.github.io/" target="_blank" class="link--external">
+            <img src="/banners/keita_kawase.png" alt="keita_kawase_banner" class="banner-no-deco" />
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
+
+      <h2 id="works">Works</h2>
+
+      <div class="work-item">
+        <h3>ghost_git_writer</h3>
+        <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。本当はサブコマンドではなく別コマンドとして実装するべきだったためいつか分けることを検討中...</p>
+        <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank" class="link--external"><span>Github Repository</span></a>
+        <img src="/repo-images/eg-of-ggw.png" alt="ghost_git_writer demo" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>dotfiles</h3>
+        <p>Hyprland + Archを中心としたdotfiles。個人用ですが、ある程度汎用化してあるため流用可能。含まれる設定などはREADMEを参照ください。</p>
+        <a href="https://github.com/Uliboooo/dotfiles" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+        <img src="/repo-images/dotfiles_screenshot.jpg" alt="dotfiles screenshot" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>初心者向けLinux doc</h3>
+        <p>大学のLinuxサークル(申請中)のメンバー(<a href="https://github.com/liar2357" target="_blank" class="link--external">@liar2357</a>と<a href="https://github.com/Uliboooo" target="_blank" class="link--external">@Uliboooo(me)</a>)と共同でリリースを行ったサイトです。Linuxを始めるにあたっての基礎的な学習を行う事を目的としたサイトです。</p>
+        <p>私は主に文書を、<a href="https://github.com/liar2357" target="_blank" class="link--external">@liar2357</a>はサイト(React等)のシステムを構築しました。</p>
+        <div class="work-links">
+          <a href="https://github.com/linux-club-tid/linux-docs-next" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+          <a href="https://linux-docs-next.pages.dev/" target="_blank" class="link--external"><span>Website</span></a>
+        </div>
+        <img src="/repo-images/screenshot_linudoc.png" alt="Linux doc screenshot" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>easy_storage</h3>
+        <p>Rustにおけるstructやenumデータを、JSONまたはTOML形式で容易にファイルへ保存、読み込みするためのTraitを提供するライブラリ。実質的にはserdeのラッパー。</p>
+        <div class="work-links">
+          <a href="https://github.com/Uliboooo/easy_storage" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+          <a href="https://crates.io/crates/easy_storage" target="_blank" class="link--external"><span>crates.io</span></a>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <h3>track2line</h3>
+        <p>VoiSona Talk などから出力された音声ファイルの名前を、台詞テキストを参照して一括変換するツール。メイン機能はLibとして分離されており、CLIとGUI版を開発している。GUIはeguiで実装。</p>
+        <div class="work-links">
+          <a href="https://github.com/Uliboooo/track2line" target="_blank" class="link--external"><span>GitHub Repository [CLI]</span></a>
+          <a href="https://github.com/Uliboooo/track2line_gui" target="_blank" class="link--external"><span>GUI</span></a>
+          <a href="https://github.com/Uliboooo/track2line_lib" target="_blank" class="link--external"><span>Lib</span></a>
+        </div>
+        <img src="/repo-images/t2l-gui.png" alt="track2line gui" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>hypr-presto</h3>
+        <p>GTK製のWayland向けアプリランチャー.アプリを1つのキーストロークで起動。登録するアプリは設定ファイルで定義。</p>
+        <a href="https://github.com/Uliboooo/hypr-presto" target="_blank" class="link--external"><span>Github Repository</span></a>
+        <img src="/repo-images/demo-presto.png" alt="hypr-presto demo" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>cli_playground</h3>
+        <p>CLIにおける引数などの一般的な、解析結果のみを表示するコマンドです。これは環境を壊さずにCLIを練習するためのものです。</p>
+        <a href="https://github.com/Uliboooo/cli_playground" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+        <div class="work-image-grid">
+          <img src="/repo-images/cli-play1.png" alt="cli_playground demo 1" class="work-image" />
+          <img src="/repo-images/cli-play2.png" alt="cli_playground demo 2" class="work-image" />
+        </div>
+      </div>
+
+      <div class="work-item">
+        <h3>voime</h3>
+        <p>Linuxでwhisperを用いた音声入力をできるようにすることを目指すプロジェクト.ポップアップで文字起こししてクリップボードにコピーする形に。</p>
+        <a href="https://github.com/Uliboooo/voime" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+      </div>
+
+      <div class="work-item">
+        <h3>local_issues_lib</h3>
+        <p>GitHubのIssuesと似たような課題管理をローカルで行うための機能を提供するlib.下記の<code>fork_notes</code>にて使用。</p>
+        <a href="https://github.com/Uliboooo/local_issues_lib" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+      </div>
+
+      <div class="work-item">
+        <h3>fork_notes</h3>
+        <p>上記の<code>local_issues_lib</code>をGUIとして実装したもの。GUIは<code>egui</code>を利用。</p>
+        <a href="https://github.com/Uliboooo/fork_notes" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+        <img src="/repo-images/fork_notes_shot.png" alt="fork_notes demo" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>task_manage_practice_mbt</h3>
+        <p>Moonbitの練習用。ソフトウェアの完成度よりMoonbitの使い方を勉強している途中。</p>
+        <a href="https://github.com/Uliboooo/task_manage_practice_mbt" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+      </div>
+
+      <div class="work-item">
+        <h3>Mother_is_angry</h3>
+        <p>x.comへアクセスした際にhacker newsにリダイレクトするだけのChrome extenstion。</p>
+        <a href="https://github.com/Uliboooo/Mother_is_angry" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+      </div>
+
+      <div class="work-item">
+        <h3>min_lisp</h3>
+        <p>プログラミング練習のための最小限のLisp環境。</p>
+        <a href="https://github.com/Uliboooo/lisp_min_practice" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+        <img src="/repo-images/shot_of_lisp_machine.png" alt="min_lisp demo" class="work-image" />
+      </div>
+
+      <div class="work-item">
+        <h3>blog</h3>
+        <p>Astro + Cloudflare Pagesでホストされている自作ブログ</p>
+        <a href="https://github.com/Uliboooo/blog" target="_blank" class="link--external"><span>GitHub Repository</span></a>
+        <img src="/repo-images/blog.png" alt="min_lisp demo" class="work-image" />
+      </div>
+
+      <h2 id="capabilities">Capabilities</h2>
+      <p>webは苦手ですが最近ちょっとだけ手を出しています。</p>
+      <p class="capability-links">
+        <a href="https://github.com/Uliboooo?tab=repositories&q=&type=public&language=rust&sort=" target="_blank" class="link--external">Rust</a>,
+        <a href="https://github.com/Uliboooo?tab=repositories&q=&type=public&language=shell&sort=" target="_blank" class="link--external">Shell</a>,
+        <a href="https://github.com/Uliboooo?tab=repositories&q=cli&type=public&language=&sort=" target="_blank" class="link--external">CLI Development</a>,
+        <a href="https://github.com/Uliboooo?tab=repositories&q=lib&type=public&language=&sort=" target="_blank" class="link--external">Lib Development</a>
+      </p>
     </div>
   </div>
 </BaseLayout>

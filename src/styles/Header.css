@@ -4,8 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 2.2rem;
+  gap: 1.25rem;
 
-  img {
-    width: 2rem;
+  a:hover .icon {
+    background-color: #C9B4FF;
+    filter: drop-shadow(0 0 5px rgba(201, 180, 255, 0.5));
   }
 }

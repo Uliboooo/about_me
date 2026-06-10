@@ -1,30 +1,61 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/uliboooo.css";
 
 const l = [
   {
     name: "伊吹静香は20歳になった",
-    link: "https://note.com/uliboooo/n/n14721f4913ac",
+    links: [
+      {
+        type: "note",
+        link: "https://note.com/uliboooo/n/n14721f4913ac",
+      },
+      {
+        type: "X",
+        link: "https://x.com/Uliboooo/status/2059643951817404723?s=20",
+      }
+    ]
   },
 ];
 ---
 
 <BaseLayout title="Lilan" activeTab="lilan">
-  <div class="works-section">
-    <h2>Lilan (梨藍)</h2>
-    創作物などに向けた名義。Ulibooooの中の人ともいう。
-    <blockquote cite=""><p>好きな物:<br />文字, パスタ, かわいいもの, 軽さ, 雨, 睡眠, Vim, 紙袋</p></blockquote>
-    <blockquote cite=""><p>嫌いなもの:<br />右クリック, 細かいUI, 多機能, 複雑な料金プラン</p></blockquote>
+  <div class="about_me">
+    <div class="main_content">
+      <h2 id="lilan">Lilan (梨藍)</h2>
+      <p>
+        創作物などに向けた名義。Ulibooooの中の人ともいう。
+      </p>
 
-    <h2>Works</h2>
-    <ul>
-      {l.map(p => (
-      <li>
-        <a href={p.link} class="link--external link--underline">{p.name}</a>
-      </li>
-      ))
+      <blockquote class="favorites">
+        <p>
+          好きな物:<br />
+          文字, パスタ, かわいいもの, 軽さ, 雨, 睡眠, Vim, 紙袋
+        </p>
+      </blockquote>
+      <blockquote class="dislikes">
+        <p>
+          嫌いなもの:<br />
+          右クリック, 細かいUI, 多機能, 複雑な料金プラン
+        </p>
+      </blockquote>
+
+      <h2 id="works">Works</h2>
+      
+      {
+        l.map((work) => (
+          <div class="work-item">
+            <h3>{work.name}</h3>
+            <div class="work-links">
+              {work.links.map((p) => (
+                <a href={p.link} target="_blank" class="link--external" rel="noopener noreferrer">
+                  <span style="font-size: 1.05rem;">{p.type}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
       }
-    </ul>
+    </div>
   </div>
-
 </BaseLayout>
