@@ -30,7 +30,7 @@ const { title, activeTab } = Astro.props;
       type="font/ttf"
       crossorigin
     />
-    <title>{title} / Lilan</title>
+    <title>{title} / Seli</title>
     <script is:inline>
       const theme = (() => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -62,10 +62,10 @@ const { title, activeTab } = Astro.props;
           </a>
           <span class="head-title"> / </span>
           <a
-            href="/lilan"
-            class={`link--underline head-title ${activeTab === "lilan" ? "is-active" : ""}`}
+            href="/seli"
+            class={`link--underline head-title ${activeTab === "seli" ? "is-active" : ""}`}
           >
-            Lilan
+            Seli
           </a>
         </div>
         <div class="header-right">
