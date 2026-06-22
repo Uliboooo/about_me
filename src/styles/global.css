@@ -45,7 +45,8 @@
   --blockquote-text: #556a7e;
 
   --base-fonts-sans: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", "Roboto", "Noto Sans JP", "Yomogi", sans-serif;
+    "Hiragino Sans", "Noto Sans CJK JP", "Noto Sans JP", "Roboto",
+    "Noto Sans JP", "Yomogi", sans-serif;
   --base-fonts-mono: "Monaspace Neon", "Annotation Mono", monospace;
 
   /* Bright background glow needs more saturation to pop */
